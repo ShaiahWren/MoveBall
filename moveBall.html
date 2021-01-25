@@ -1,0 +1,37 @@
+<div id="ball" style="
+  z-index:5;
+  position:absolute;
+  left:0px;
+  top:0px;
+  width:50px;
+  height:50px;
+  border-radius:50%;
+  background:purple"></div>
+
+<script>
+
+var velocity = 10;
+var positionX = 0;
+var ball = document.getElementById('ball');
+
+// YOUR CODE 
+// ----------------
+
+function simulation() {
+  if (positionX + 25 > 600 || positionX + 25 < 25) {
+    velocity = -velocity
+    ball.style.background = 'purple';
+  } else if (positionX < 25) {
+    ball.style.background = "green";
+  }
+
+  positionX = positionX + velocity;
+  ball.style.left = positionX + 'px';
+  ball.style.top = positionX + 'px';
+
+}
+
+setInterval(simulation, 10);
+
+
+</script>
